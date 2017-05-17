@@ -7,5 +7,10 @@
     <item
         android:id="@+id/signUpItem"
         android:title="SignUp"/>
-
+    <item
+        android:id="@+id/weiBoSignInItem"
+        android:title="weiBoSignIn"/>
+    <item
+        android:id="@+id/othersSignInItem"
+        android:title="othersSignIn"/>
 </menu>

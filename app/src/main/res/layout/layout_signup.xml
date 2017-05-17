@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <EditText
+        android:id="@+id/signUpEmail"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_above="@+id/signUpUserName"
+        android:inputType="textPassword"
+        android:hint="Email@example.com"/>
+    <EditText
+        android:id="@+id/signUpUserName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_above="@+id/signUpPassWord0"
+        android:inputType="textPassword"
+        android:hint="Pick a username"/>
+    <EditText
+        android:id="@+id/signUpPassWord0"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_centerInParent="true"
+        android:inputType="textPassword"
+        android:hint="Create a Password !"/>
+    <EditText
+        android:id="@+id/signUpPassWord1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_below="@+id/signUpPassWord0"
+        android:inputType="textPassword"
+        android:hint="Ensure Password !"/>
+    <Button
+        android:id="@+id/signUpBt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_below="@+id/signUpPassWord1"
+        android:textAllCaps="false"
+        android:text="SignUp"/>
+</RelativeLayout>

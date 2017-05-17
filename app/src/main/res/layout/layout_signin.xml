@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:layout_gravity="center">
     <EditText
         android:id="@+id/userName"
         android:layout_width="match_parent"
@@ -10,7 +11,7 @@
         android:layout_marginRight="40dp"
         android:layout_gravity="center"
         android:layout_above="@+id/passWord"
-        android:hint="User Name/email.example.com"/>
+        android:hint="User Name/Email.example.com"/>
     <EditText
         android:id="@+id/passWord"
         android:layout_width="match_parent"
