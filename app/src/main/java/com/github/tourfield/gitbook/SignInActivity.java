@@ -19,6 +19,9 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
     private static final String TAG = "SignInActivity";
     private static final int intentFd = 20001;
     private Button signInBt;
+    private Button gotoSelfBt;
+    private Button gotSignUpBt;
+    private Intent gotoIntent;
     private EditText userName;
     private String strName;
     private EditText passWord;
@@ -27,6 +30,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d(TAG, "onCreate: @ "+ this.toString());
         setContentView(R.layout.layout_signin);
         if (savedInstanceState != null){
             strName = savedInstanceState.getString("data_key");
@@ -40,6 +44,11 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
         signInBt = (Button)findViewById(R.id.signInBt);
         userName = (EditText)findViewById(R.id.userName);
         passWord = (EditText)findViewById(R.id.passWord);
+        gotoSelfBt=(Button)findViewById(R.id.gotoSelf);
+        gotSignUpBt=(Button)findViewById(R.id.gotoSignUp);
+
+        gotoSelfBt.setOnClickListener(this);
+        gotSignUpBt.setOnClickListener(this);
         signInBt.setOnClickListener(this);
         if(strName != null){
             userName.setText(strName);
@@ -118,6 +127,14 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
                 intent = new Intent("com.github.tourfield.gitbook.ACTION_START");
                 intent.addCategory("com.github.tourfield.gitbook.MYCATEGORY");
                 startActivity(intent);
+                break;
+            case R.id.gotoSelf:
+                gotoIntent = new Intent(this,SignInActivity.class);
+                startActivity(gotoIntent);
+                break;
+            case R.id.gotoSignUp:
+                gotoIntent = new Intent(this,SignUpActivity.class);
+                startActivity(gotoIntent);
                 break;
         }
     }

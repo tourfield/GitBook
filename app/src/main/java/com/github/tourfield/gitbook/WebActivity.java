@@ -13,13 +13,22 @@ public class WebActivity extends AppCompatActivity implements View.OnClickListen
     private static final int intentFd = 20001;
     private EditText editText;
     private Button webOkBt;
+    private Button gotoSelfBt;
+    private Button gotoMainBt;
+    private Intent gotoIntent;
     private Intent intent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d(TAG, "onCreate: @ "+ this.toString());
         setContentView(R.layout.layout_web);
         editText = (EditText)findViewById(R.id.webEditTxt);
         webOkBt = (Button) findViewById(R.id.webOkBt);
+        gotoSelfBt=(Button)findViewById(R.id.gotoSelf);
+        gotoMainBt=(Button)findViewById(R.id.gotoMain);
+
+        gotoSelfBt.setOnClickListener(this);
+        gotoMainBt.setOnClickListener(this);
         intent = getIntent();
         String weiBoData = intent.getStringExtra("weiBoData");
         editText.setText(weiBoData);
@@ -33,7 +42,15 @@ public class WebActivity extends AppCompatActivity implements View.OnClickListen
                 Log.i(TAG, "onClick: webOkBt");
                 intent.putExtra("retrunResult",editText.getText().toString());
                 setResult(RESULT_OK,intent);
-                finish();
+//                finish();
+                break;
+            case R.id.gotoSelf:
+                gotoIntent = new Intent(this,WebActivity.class);
+                startActivity(gotoIntent);
+                break;
+            case R.id.gotoMain:
+                gotoIntent = new Intent(this,MainActivity.class);
+                startActivity(gotoIntent);
                 break;
         }
     }

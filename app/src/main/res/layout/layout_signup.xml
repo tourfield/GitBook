@@ -47,4 +47,19 @@
         android:layout_below="@+id/signUpPassWord1"
         android:textAllCaps="false"
         android:text="SignUp"/>
+
+    <Button
+        android:id="@+id/gotoSelf"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:layout_above="@+id/gotoWeb"
+        android:text="gotoSelf"/>
+    <Button
+        android:id="@+id/gotoWeb"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAllCaps="false"
+        android:layout_alignParentBottom="true"
+        android:text="gotoWeb"/>
 </RelativeLayout>

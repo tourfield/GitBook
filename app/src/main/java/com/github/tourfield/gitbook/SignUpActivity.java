@@ -14,11 +14,20 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
     private static final String TAG = "SignUpActivity";
     private Intent intent;
     private Button signUpBt;
+    private Button gotoSelfBt;
+    private Button gotWebBt;
+    private Intent gotoIntent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        Log.d(TAG, "onCreate: @ "+ this.toString());
         setContentView(R.layout.layout_signup);
         signUpBt=(Button)findViewById(R.id.signUpBt);
+        gotoSelfBt=(Button)findViewById(R.id.gotoSelf);
+        gotWebBt=(Button)findViewById(R.id.gotoWeb);
+
+        gotoSelfBt.setOnClickListener(this);
+        gotWebBt.setOnClickListener(this);
         signUpBt.setOnClickListener(this);
     }
 
@@ -52,6 +61,14 @@ public class SignUpActivity extends AppCompatActivity implements View.OnClickLis
         switch (v.getId()){
             case R.id.signUpBt:
                 Log.i(TAG, "onClick: signUpBt");
+                break;
+            case R.id.gotoSelf:
+                gotoIntent = new Intent(this,SignUpActivity.class);
+                startActivity(gotoIntent);
+                break;
+            case R.id.gotoWeb:
+                gotoIntent = new Intent(this,WebActivity.class);
+                startActivity(gotoIntent);
                 break;
         }
     }
