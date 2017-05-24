@@ -3,6 +3,13 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="center">
+    <!--<include layout="@layout/title"/>-->
+    <com.github.tourfield.gitbook.TitleLayout
+        android:id="@+id/titleLay"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"/>
+
     <EditText
         android:id="@+id/userName"
         android:layout_width="match_parent"
@@ -36,7 +43,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
-            android:text="Save User Name" />
+            android:text="Save User Name"/>
 
         <CheckBox
             android:id="@+id/checkBoxSavePassWd"

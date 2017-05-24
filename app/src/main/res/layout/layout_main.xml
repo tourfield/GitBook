@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <include layout="@layout/title"/>
     <Button
         android:id="@+id/gotoSelf"
         android:layout_width="match_parent"
@@ -14,5 +15,22 @@
         android:layout_height="wrap_content"
         android:textAllCaps="false"
         android:text="gotoSignIn"/>
+    <ImageView
+        android:id="@+id/draginCatImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/dragin"/>
+    <ProgressBar
+        android:id="@+id/progressBar01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"/>
+    <ProgressBar
+        android:id="@+id/progressBar02"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:background="@color/colorPrimary"
+        android:max="100"/>
 
 </LinearLayout>

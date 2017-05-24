@@ -37,10 +37,10 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
             Log.d(TAG, "onCreate: " + strName);
             Toast.makeText(this,strName,Toast.LENGTH_SHORT).show();
         }
-//        ActionBar actionBar = getSupportActionBar();
-//        if(actionBar != null){
-//            actionBar.hide();
-//        }
+        ActionBar actionBar = getSupportActionBar();
+        if(actionBar != null){
+            actionBar.hide();
+        }
         signInBt = (Button)findViewById(R.id.signInBt);
         userName = (EditText)findViewById(R.id.userName);
         passWord = (EditText)findViewById(R.id.passWord);
