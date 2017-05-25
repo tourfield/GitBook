@@ -7,12 +7,15 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 import android.widget.Toast;
@@ -20,7 +23,9 @@ import android.widget.Toast;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener, AdapterView.OnItemClickListener {
+import static android.R.attr.data;
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "MainActivity";
     private Button gotoSelfBt;
     private Button gotSignInBt;
@@ -28,7 +33,11 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     private ImageView imageView;
     private ProgressBar progressBar01;
     private ProgressBar progressBar02;
-    private ListView listView;
+    /**
+     * ListView 实现
+     * private ListView listView;
+     */
+
     private String[] fruitNmaes={"peach桃子",
             "Lemon 柠檬",
             "Pear 梨子" ,
@@ -91,8 +100,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //        ArrayAdapter <String> adapter = new ArrayAdapter<String>(MainActivity.this,android.R.layout.simple_expandable_list_item_1,data);
         FruitAdapter fruitAdapter = new FruitAdapter(MainActivity.this,R.layout.fruit_iterm,fruitList);
         gotoSelfBt=(Button)findViewById(R.id.gotoSelf);
-        listView=(ListView)findViewById(R.id.listView);
-        listView.setAdapter(fruitAdapter);
+        /**
+         *  ListView 实现
+         * listView=(ListView)findViewById(R.id.listView);
+         * listView.setAdapter(fruitAdapter);
+         * listView.setOnItemClickListener(this);
+         */
+
+
         gotSignInBt=(Button)findViewById(R.id.gotoSignIn);
         imageView = (ImageView)findViewById(R.id.draginCatImg);
         progressBar01 = (ProgressBar)findViewById(R.id.progressBar01);
@@ -100,7 +115,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         gotoSelfBt.setOnClickListener(this);
         gotSignInBt.setOnClickListener(this);
         imageView.setOnClickListener(this);
-        listView.setOnItemClickListener(this);
+
+
+        RecyclerView recyclerView = (RecyclerView)findViewById(R.id.recyclerView);
+        LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+        FruitRecyclerAdapter fruitRecyclerAdapter = new FruitRecyclerAdapter(fruitList);
+        recyclerView.setAdapter(fruitRecyclerAdapter);
+        recyclerView.setOnClickListener(this);
     }
 
     private void initFruit() {
@@ -162,9 +184,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
-    @Override
-    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-        Fruit fruit=fruitList.get(position);
-        Toast.makeText(MainActivity.this,fruit.getName(),Toast.LENGTH_SHORT).show();
-    }
+    /**
+     *  ListView 实现
+     *
+     * @Override
+     *  public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+     *   Fruit fruit=fruitList.get(position);
+     *  Toast.makeText(MainActivity.this,fruit.getName(),Toast.LENGTH_SHORT).show();
+     *   }
+     */
+
 }
