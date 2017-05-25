@@ -24,7 +24,14 @@ public class FruitRecyclerAdapter extends RecyclerView.Adapter<FruitRecyclerAdap
     public void onClick(View v) {
         int position = holder.getAdapterPosition();
         Fruit fruit = mFruitList.get(position);
-        Toast.makeText(v.getContext(),"fruitImage"+fruit.getName(),Toast.LENGTH_SHORT).show();
+        switch (v.getId()){
+        case R.id.fruitImage:
+            Toast.makeText(v.getContext(), "fruitImage" + fruit.getName(), Toast.LENGTH_SHORT).show();
+            break;
+            case R.id.fruitName:
+                Toast.makeText(v.getContext(), "fruitName" + fruit.getName(), Toast.LENGTH_SHORT).show();
+                break;
+        }
     }
 
     static class ViewHolder extends RecyclerView.ViewHolder{
@@ -49,6 +56,7 @@ public class FruitRecyclerAdapter extends RecyclerView.Adapter<FruitRecyclerAdap
         holder= new ViewHolder(view);
         Log.d(TAG, "after call : ViewHolder");
         holder.fruitImage.setOnClickListener(this);
+        holder.fruitName.setOnClickListener(this);
         return holder;
     }
 
