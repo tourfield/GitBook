@@ -119,6 +119,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         RecyclerView recyclerView = (RecyclerView)findViewById(R.id.recyclerView);
         LinearLayoutManager layoutManager = new LinearLayoutManager(this);
+        layoutManager.setOrientation(LinearLayoutManager.HORIZONTAL);
         recyclerView.setLayoutManager(layoutManager);
         FruitRecyclerAdapter fruitRecyclerAdapter = new FruitRecyclerAdapter(fruitList);
         recyclerView.setAdapter(fruitRecyclerAdapter);
