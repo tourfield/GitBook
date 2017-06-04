@@ -9,17 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".SignInActivity"
+        <activity
+            android:name=".SignInActivity"
             android:launchMode="standard">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
-        <activity android:name=".SignUpActivity"
-            android:launchMode="singleTop"/>
-        <activity android:name=".MainActivity"
+        <activity
+            android:name=".SignUpActivity"
+            android:launchMode="singleTop" />
+        <activity
+            android:name=".MainActivity"
             android:launchMode="singleTask">
             <intent-filter>
                 <action android:name="com.github.tourfield.gitbook.ACTION_START" />
@@ -28,13 +27,22 @@
                 <category android:name="com.github.tourfield.gitbook.MYCATEGORY" />
             </intent-filter>
         </activity>
-        <activity android:name=".WebActivity"
+        <activity
+            android:name=".WebActivity"
             android:launchMode="singleInstance">
             <intent-filter>
-                <action android:name="android.intent.action.VIEW"/>
-                <category android:name="android.intent.category.DEFAULT"/>
-                <data android:scheme="https"/>
-                <data android:host="www.baidu.com"/>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="https" />
+                <data android:host="www.baidu.com" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".TalkingActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
     </application>
