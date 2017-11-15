@@ -8,9 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
-import com.github.tourfield.gitbook.base.BaseActivity;
-
-public class WebActivity extends BaseActivity implements View.OnClickListener {
+public class WebActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "SignInActivity";
     private static final int intentFd = 20001;
     private EditText editText;

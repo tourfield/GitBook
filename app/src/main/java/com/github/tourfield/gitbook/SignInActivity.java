@@ -15,9 +15,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import com.github.tourfield.gitbook.base.BaseActivity;
-
-public class SignInActivity extends BaseActivity implements View.OnClickListener {
+public class SignInActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "SignInActivity";
     private static final int intentFd = 20001;
     private Button signInBt;

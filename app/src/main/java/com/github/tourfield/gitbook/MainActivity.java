@@ -7,25 +7,27 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.ProgressBar;
-
-import com.github.tourfield.gitbook.base.ActivityCollector;
-import com.github.tourfield.gitbook.base.BaseActivity;
-import com.github.tourfield.gitbook.fruit.Fruit;
-import com.github.tourfield.gitbook.fruit.FruitAdapter;
-import com.github.tourfield.gitbook.fruit.FruitRecyclerAdapter;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
-public class MainActivity extends BaseActivity implements View.OnClickListener {
+import static android.R.attr.data;
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
     private static final String TAG = "MainActivity";
     private Button gotoSelfBt;
     private Button gotSignInBt;
@@ -206,4 +208,5 @@ public class MainActivity extends BaseActivity implements View.OnClickListener {
      *  Toast.makeText(MainActivity.this,fruit.getName(),Toast.LENGTH_SHORT).show();
      *   }
      */
+
 }
