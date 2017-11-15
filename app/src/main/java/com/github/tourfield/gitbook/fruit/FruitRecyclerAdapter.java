@@ -1,4 +1,4 @@
-package com.github.tourfield.gitbook;
+package com.github.tourfield.gitbook.fruit;
 
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
@@ -8,6 +8,8 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.github.tourfield.gitbook.R;
 
 import java.util.List;
 

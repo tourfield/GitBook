@@ -10,7 +10,9 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 
-public class SignUpActivity extends AppCompatActivity implements View.OnClickListener {
+import com.github.tourfield.gitbook.base.BaseActivity;
+
+public class SignUpActivity extends BaseActivity implements View.OnClickListener {
     private static final String TAG = "SignUpActivity";
     private Intent intent;
     private Button signUpBt;

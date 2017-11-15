@@ -1,4 +1,4 @@
-package com.github.tourfield.gitbook;
+package com.github.tourfield.gitbook.fruit;
 
 /**
  * Created by Geary on 2017/5/24.
