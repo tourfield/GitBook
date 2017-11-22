@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
      * private ListView listView;
      */
 
-    private String[] fruitNmaes={"peach桃子",
+    private String[] fruitNames={"peach桃子",
             "Lemon 柠檬",
             "Pear 梨子" ,
             "avocado南美梨" ,
@@ -89,7 +89,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             "Raspberry覆盆子"
     };
     private List<Fruit> fruitList = new ArrayList<>();
-    private static final int SPANLINENUMBER = 3;
+    private static final int SPANLINENUMBER = 2;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -131,15 +131,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void initFruit() {
-        for (String fruitName:fruitNmaes){
+        for (String fruitName:fruitNames){
             Fruit fruit = new Fruit(getRandomLengthName(fruitName),R.drawable.cm);
             fruitList.add(fruit);
         }
     }
 
     private String getRandomLengthName(String fruitName) {
-        Random random = new Random();
-        int length = random.nextInt(20)+1;
+//        Random random = new Random();
+        int length = 1;//random.nextInt(20)+1;
         StringBuilder builder = new StringBuilder();
         for(int i=0;i<length;i++){
             builder.append(fruitName);
